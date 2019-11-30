@@ -1,13 +1,16 @@
 package hibernate;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * @project IlernaPACDesaAD
  * @author: jonan on 26/11/2019
  */
-public class Alumno {
+public class Alumno implements Serializable {
 
+
+    private static final long serialVersionUID = 425682699934182000L;
     private long id;
     private String nombre;
     private String nacionalidad;
@@ -15,8 +18,7 @@ public class Alumno {
     private String sexo;
     private List<Modulo> modulos;
 
-    public Alumno() {
-    }
+    public Alumno() {}
 
     public Alumno(long id, String nombre, String nacionalidad, int edad, String sexo, List<Modulo> modulos) {
         this.id = id;
@@ -73,5 +75,17 @@ public class Alumno {
 
     public void setModulos(List<Modulo> modulos) {
         this.modulos = modulos;
+    }
+
+    @Override
+    public String toString() {
+        return "Alumno{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", nacionalidad='" + nacionalidad + '\'' +
+                ", edad=" + edad +
+                ", sexo='" + sexo + '\'' +
+                ", modulos=" + modulos +
+                '}';
     }
 }

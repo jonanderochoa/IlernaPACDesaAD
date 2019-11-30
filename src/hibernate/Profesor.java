@@ -1,11 +1,14 @@
 package hibernate;
 
+import java.io.Serializable;
+
 /**
  * @project IlernaPACDesaAD
  * @author: jonan on 26/11/2019
  */
-public class Profesor {
+public class Profesor implements Serializable {
 
+    private static final long serialVersionUID = 1233227507009912308L;
     private long id;
     private String nombre;
     private String sexo;
@@ -41,5 +44,14 @@ public class Profesor {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+
+    @Override
+    public String toString() {
+        return "Profesor{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", sexo='" + sexo + '\'' +
+                '}';
     }
 }
